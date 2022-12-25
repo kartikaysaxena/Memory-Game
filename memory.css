@@ -1,0 +1,8 @@
+.b {
+    margin-left: 380px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:400px;
+    height:100%;
+}
