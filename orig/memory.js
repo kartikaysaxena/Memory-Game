@@ -48,30 +48,6 @@ const cardarray = [
         img : 'pizza.png'
     }
 ]
-const h4 = document.querySelector('h4');
-var w = document.querySelector('#q');
-var c= 60;
-
-w.innerText = c;
-
-var int = setInterval(() => {
-    
-    w.innerText=c;
-    
-    if (c<=0)
-    {
-        w.innerText='0';
-        clearInterval(int);
-        h4.innerText='You Lost!';
-        alert('YOU LOST');
-        but.style.visibility = 'visible';
-        removeBoard();
-
-    }
-    c--;
-
-}, 1000);
-
 var score =0;
 var cardsChosen =[];
 var cardschosenid = [];
@@ -82,9 +58,6 @@ const gridDisplay = document.querySelector('.b');
 function checkmatch(){
     const cards = document.querySelectorAll('.b img');
     const h1 = document.querySelector('h1');
-    const h2 = document.querySelector('h2');
-    const h3 = document.querySelector('h3');
-    const h4 = document.querySelector('h4');
     let a = cardschosenid[0];
     let y = cardschosenid[1];
     if (a===y)
@@ -95,24 +68,19 @@ function checkmatch(){
     }
     else if (cardsChosen[0]===cardsChosen[1])
     {
+        alert('same');
         cards[cardschosenid[0]].setAttribute('src','white.png');
         cards[cardschosenid[1]].setAttribute('src','white.png');
         cards[cardschosenid[0]].removeEventListener('click',flipcard);
         cards[cardschosenid[1]].removeEventListener('click',flipcard);
     
         score++;
-        h2.innerText=`Your score is ${score}`;
-        if (score>=6)
-        {
-            alert('Congrats you won!');
-            h3.innerText='You Won!';
-            clearInterval(int);
-            but.style.visibility = 'visible';
-        }
+        h1.innerText=score;
         
     }
     else 
     {
+        alert('not same');
         cards[cardschosenid[0]].setAttribute('src','blank.png');
         cards[cardschosenid[1]].setAttribute('src','blank.png');
         cardsChosen =[];
@@ -122,30 +90,6 @@ function checkmatch(){
     }
     cardsChosen = [];
     cardschosenid = [];
-}
-function removeBoard() {
-    const inp = document.querySelectorAll('img');
-    try{
-        if (inp[0].src===null)
-    {
-
-    }
-    else 
-    {
-        for (let i=0;i<12;i++)
-        {
-        
-            inp[i].remove();
-        }
-    
-        
-    }
-    }
-    catch {
-
-    }
-    
-    
 }
 
 function createBoard() {
@@ -170,33 +114,6 @@ function flipcard() {
     if (cardsChosen.length ===2)
     {
         
-        setTimeout(checkmatch,500);
+        setTimeout(checkmatch,1000);
     }
 }
-function reset() {
-    but.style.visibility = 'hidden';
-    removeBoard();
-    createBoard();
-    clearInterval(int);
-    var c = 60;
-  
-    var inp = setInterval(() => 
-    {
-    
-        w.innerText=c;
-        
-        if (c<=0)
-        {
-            w.innerText='0';
-            clearInterval(inp);
-            alert('YOU LOST');
-            but.style.visibility = 'visible';
-            removeBoard();
-        }
-        c--;
-    
-    }, 1000);
-
-}
-const but = document.querySelector('button');
-but.addEventListener('click',reset);

@@ -1,8 +1,49 @@
+
 .b {
-    margin-left: 380px;
+    margin-left: 500px;
+    margin-right: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width:400px;
     height:100%;
+ 
+}
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+h4 {
+    text-align: center;
+}
+h5 {
+    text-align: center;
+}
+button {
+    margin-left: 640px;
+    margin-right: 640px;
+    color: #ffa260;
+    border-color: yellow;
+    border: 2px;
+    border-style: solid;
+    background-color: #151b29;
+    padding: 1em 2em;
+    font-size: 1em;
+    transition: all 0.25s;
+    visibility:hidden;
+
+}
+button:hover {
+    border-color: yellow;
+    color: white;
+    box-shadow: 0em 0.5em 0.5em -0.4em #f1ff5c;
+    transform: translateY(-0.5em);
+    transform: scale(1.1);
+    cursor: pointer;
 }
