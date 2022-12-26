@@ -198,5 +198,7 @@ function reset() {
     }, 1000);
 
 }
+
 const but = document.querySelector('button');
 but.addEventListener('click',reset);
+const r = document.querySelector('.b');
