@@ -173,32 +173,6 @@ function flipcard() {
         setTimeout(checkmatch,500);
     }
 }
-function reset() {
-    but.style.visibility = 'hidden';
-    removeBoard();
-    createBoard();
-    clearInterval(int);
-    var c = 60;
-  
-    var inp = setInterval(() => 
-    {
-    
-        w.innerText=c;
-        
-        if (c<=0)
-        {
-            w.innerText='0';
-            clearInterval(inp);
-            alert('YOU LOST');
-            but.style.visibility = 'visible';
-            removeBoard();
-        }
-        c--;
-    
-    }, 1000);
 
-}
 
-const but = document.querySelector('button');
-but.addEventListener('click',reset);
 const r = document.querySelector('.b');
