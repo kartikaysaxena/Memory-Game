@@ -50,8 +50,7 @@ const cardarray = [
 ]
 const h4 = document.querySelector('h4');
 var w = document.querySelector('#q');
-var c= 60;
-
+var c= 15;
 w.innerText = c;
 
 var int = setInterval(() => {
@@ -64,7 +63,6 @@ var int = setInterval(() => {
         clearInterval(int);
         h4.innerText='You Lost!';
         alert('YOU LOST');
-        but.style.visibility = 'visible';
         removeBoard();
 
     }
@@ -108,6 +106,10 @@ function checkmatch(){
             h3.innerText='You Won!';
             clearInterval(int);
             but.style.visibility = 'visible';
+        }
+        else if (score<6 && c===0)
+        {
+            removeBoard();
         }
         
     }
