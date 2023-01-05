@@ -50,7 +50,7 @@ const cardarray = [
 ]
 const h4 = document.querySelector('h4');
 var w = document.querySelector('#q');
-var c= 15;
+var c= 30;
 w.innerText = c;
 
 var int = setInterval(() => {
