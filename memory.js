@@ -175,6 +175,3 @@ function flipcard() {
         setTimeout(checkmatch,500);
     }
 }
-
-
-const r = document.querySelector('.b');
